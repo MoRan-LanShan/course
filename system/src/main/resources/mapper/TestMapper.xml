@@ -6,7 +6,7 @@
     <!--<result column="name" jdbcType="VARCHAR" property="name" />-->
     <!--</resultMap>-->
     <select id="list" resultType="com.hd.course.system.domain.Test">
-    select `id`,`name` from `test`
+    select t.id,t.name from test t
   </select>
     <!--<sql id="Example_Where_Clause">-->
     <!--<where>-->
