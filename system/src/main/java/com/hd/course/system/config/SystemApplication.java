@@ -1,4 +1,4 @@
-package com.hd.course.system;
+package com.hd.course.system.config;
 
 import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
