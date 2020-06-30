@@ -1,6 +1,7 @@
 package com.hd.course.system.controller;
 
 import com.hd.course.server.domain.Test;
+import com.hd.course.server.domain.TestExample;
 import com.hd.course.server.service.TestService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,6 +17,9 @@ public class TestController {
 
     @RequestMapping("/test")
     public List<Test> test(){
+        TestExample testExample = new TestExample();
+        testExample.createCriteria().andIdEqualTo("1");
+        testExample.setOrderByClause("id desc");
         return testService.list();
     }
 }
