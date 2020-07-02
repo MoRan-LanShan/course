@@ -1,7 +1,6 @@
-package com.hd.course.business.controller;
+package com.hd.course.business.controller.admin;
 
-import com.hd.course.server.domain.Chapter;
-import com.hd.course.server.domain.ChapterExample;
+import com.hd.course.server.dto.ChapterDTO;
 import com.hd.course.server.service.ChapterService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,16 +10,14 @@ import javax.annotation.Resource;
 import java.util.List;
 
 @RestController
+@RequestMapping("/admin")
 public class ChapterController {
 
     @Resource
     private ChapterService chapterService;
 
-    @GetMapping(value = "/chapter")
-    public List<Chapter> chapter(){
-        ChapterExample chapterExample = new ChapterExample();
-        chapterExample.createCriteria().andIdEqualTo("1");
-        chapterExample.setOrderByClause("id desc");
+    @GetMapping( "/chapter")
+    public List<ChapterDTO> chapter(){
         return chapterService.list();
     }
 }
