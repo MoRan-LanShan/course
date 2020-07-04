@@ -17,14 +17,14 @@ public class ChapterService {
     @Resource
     private ChapterMapper chapterMapper;
 
-    public List<ChapterDTO> list(){
+    public List<ChapterDTO> list() {
         ChapterExample chapterExample = new ChapterExample();
         List<Chapter> chapterList = chapterMapper.selectByExample(chapterExample);
         List<ChapterDTO> chapterDTOList = new ArrayList<>();
-        for (int i = 0,l=chapterList.size(); i < l; i++) {
+        for (int i = 0, l = chapterList.size(); i < l; i++) {
             Chapter chapter = chapterList.get(i);
             ChapterDTO chapterDTO = new ChapterDTO();
-            BeanUtils.copyProperties(chapter,chapterDTO);
+            BeanUtils.copyProperties(chapter, chapterDTO);
             chapterDTOList.add(chapterDTO);
         }
         return chapterDTOList;
